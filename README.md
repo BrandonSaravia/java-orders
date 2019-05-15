@@ -1,11 +1,11 @@
-# java-orders
+# java-ordersList
 
 A student that completes this project shows that they can:
 * perform CRUD operations on an RDBMS using JPA and Hibernate.
 
 ## Introduction
 
-This is a basic database scheme with customers, orders, and sales agents.
+This is a basic database scheme with customersList, ordersList, and sales agents.
 
 ## Instructions
 
@@ -23,7 +23,7 @@ The table layouts are as follows
 
 * CUSTOMERS
   * CUSTCODE primary key, not null Long
-  * CUSTNAME String, not null
+  * custname String, not null
   * CUSTCITY String
   * WORKINGAREA String
   * CUSTCOUNTRY String
@@ -33,14 +33,14 @@ The table layouts are as follows
   * PAYMENTAMT double
   * OUTSTANDINGAMT double
   * PHONE String
-  * AGENTCODE Long foreign key (one agent to many customers) not null
+  * AGENTCODE Long foreign key (one agent to many customersList) not null
 
 * ORDERS
   * ORDNUM primary key, not null Long
   * ORDAMOUNT double
   * ADVANCEAMOUNT double
-  * CUSTCODE Long foreign key (one customer to many orders) not null
-  * AGENTCODE Long foreign key (one agent to many orders) not null
+  * CUSTCODE Long foreign key (one customer to many ordersList) not null
+  * AGENTCODE Long foreign key (one agent to many ordersList) not null
   * ORDDESCRIPTION String
 
 
@@ -49,13 +49,13 @@ The table layouts are as follows
  
 Expose the following end points
 
-* /customer/order - Returns all customers with their orders
-* /customer/name/{custname} - Returns all orders for a particular based on name
+* /customer/order - Returns all customersList with their ordersList
+* /customer/name/{custname} - Returns all ordersList for a particular based on name
 
 * /data/customer/new - Adds a new customer
 * /data/customer/update/{custcode} - Updates the customer based off of custcode
 * /data/customer/delete/{custcode} - Deletes the customer based off of custcode
-  * this should also delete the orders of that customer
+  * this should also delete the ordersList of that customer
 
 Stretch goals
 * /agents/{agentcode} - Deletes an agent if they are not assigned to a customer or order (Stretch Goal)
